@@ -21,6 +21,14 @@ def modelLoad(path, MAX_LENGTH):
     # custom_objects에 인자로 dictionary를 넣어줍니다
     return keras.models.load_model(path, custom_objects=custom_objects)
 
+# 토크나이저 로드
+def tokenizerLoad(path):
+    preprocess = Preprocess()
+    tokenizer = preprocess.loadTokenzier(path)
+    # 토크나이저 로드하면 모든 key,value가 string으로 들어감 나중에 토큰을 텍스트로 
+    # 복원할 때 정상적으로 구동하기 위해서 index_word는 key를 int로 바꿔줌
+    tokenizer.index_word = {int(k):v for k,v in tokenizer.index_word.items()}
+    return tokenizer
 
 #### 전처리 및 모델 코드 ####
 class Preprocess:
@@ -58,7 +66,7 @@ class Preprocess:
         key = list(data.keys())
         for i in key:
             setattr(tk, i, data[i])
-        VOCAB_SIZE = len(Tokenizer(tk).word_index) + 1
+        VOCAB_SIZE = len(tk.word_index) + 1 
         self.START_TOKEN, self.END_TOKEN = [VOCAB_SIZE], [VOCAB_SIZE + 1]
         self.VOCAB_SIZE = VOCAB_SIZE + 2
         # 토크나이저 로드하면 모든 key,value가 string으로 들어감 나중에 토큰을 텍스트로
