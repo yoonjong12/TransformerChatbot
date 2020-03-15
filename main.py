@@ -7,8 +7,6 @@ def startVerOne():
     config = tf.compat.v1.ConfigProto()
     config.gpu_options.allow_growth = True
     tf.compat.v1.enable_eager_execution(config=config)
-startVerOne()
-
 if tf.__version__[0] == '1':
     print('Using TF ver.1')
     startVerOne()
