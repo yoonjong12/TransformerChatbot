@@ -7,4 +7,4 @@ vocab_dir = os.path.normpath('./tokenizer/')
 vocab_name = "tokenizer_data.json"
 
 # Keras model
-weights_name = "my_keras_model.h5"
+weights_name = "keras_model.h5"
