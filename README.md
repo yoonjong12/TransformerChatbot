@@ -19,3 +19,4 @@ Tensorflow 블로그의 Transformer Chatbot Tutorial 게시글을 클래스로 �
 
 ## 학습시키기
 직접 말뭉치를 준비하고, 모델을 학습시키는 과정을 구글 Colab 노트북으로 정리했습니니다.
+https://github.com/yoonjong12/TransformerChatbot/blob/master/Train_Transformer.ipynb
