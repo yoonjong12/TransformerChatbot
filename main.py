@@ -34,4 +34,4 @@ while True:
         prediction = Transformer.evaluate(model, tokenizer, sentence, t, anl_type='Konlpy_tokens', MAX_LENGTH=30)
         new_text = ' '.join(prediction)
 
-        print(f'A : {new_text}')# 예측
+        print(f'A : {new_text}')# 예측z

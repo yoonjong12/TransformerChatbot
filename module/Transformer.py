@@ -92,9 +92,9 @@ class Preprocess:
 
         # max legnth에 못미치는 시퀀스는 padding합니다. 즉, 빈 공간을 0으로 채웁니다.
         tokenized_inputs = tf.keras.preprocessing.sequence.pad_sequences(
-            tokenized_inputs, maxlen=self.MAX_LENGTH, padding='post')
+            tokenized_inputs, maxlen=MAX_LENGTH, padding='post')
         tokenized_outputs = tf.keras.preprocessing.sequence.pad_sequences(
-            tokenized_outputs, maxlen=self.MAX_LENGTH, padding='post')
+            tokenized_outputs, maxlen=MAX_LENGTH, padding='post')
         return tokenized_inputs, tokenized_outputs
 
     # 학습하기 위한 Dataset을 준비합니다.
